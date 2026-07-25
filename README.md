@@ -1,4 +1,4 @@
-# 🌐Servicios🟢Integrales🔧Cázares⚙️ 🗜️-👷♎S.I.D.C.🔋
+# 🌐Servicios🟢Integrales🔧Cázares⚙️     🗜️-👷♎S.I.D.C.🔋
 Empresa líder en soluciones técnicas y de ingeniería de alta precisión
 
 <p align="center">
@@ -6,8 +6,8 @@ Empresa líder en soluciones técnicas y de ingeniería de alta precisión
 </p>
 
 
-📊 ESTADÍSTICAS
+        📊 ESTADÍSTICAS
 Estadísticas Lenguajes Racha de actividad
 
-🔗 PANEL DE ENLACES
+      🔗 PANEL DE ENLACES
 WhatsApp Grupo Oficial Soporte GitHub Repositorio Versión Estado Visitas
