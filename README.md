@@ -11,3 +11,7 @@ Estadísticas Lenguajes Racha de actividad
 
       🔗 PANEL DE ENLACES
 WhatsApp Grupo Oficial Soporte GitHub Repositorio Versión Estado Visitas
+## Código QR
+
+<img src="qr_fondo_negro.png" width="300">
+
