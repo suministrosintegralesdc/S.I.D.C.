@@ -12,9 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
     <style>
         :root { 
-            --verde-industrial: #006629; 
-            --verde-premium: #00993d; 
-            --verde-brillante: #00e65c;
+            --azul-industrial: #006629; 
+            --azul-premium: #00993d; 
+            --azul-brillante: #00e65c;
             --borde-acero: rgba(255, 255, 255, 0.07);
             --borde-luz: rgba(0, 153, 61, 0.25);
             --fondo-obscuro: #090a0a;
@@ -94,7 +94,7 @@
             text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
         .portada h1 span {
-            background: linear-gradient(120deg, #ffffff 35%, var(--verde-brillante));
+            background: linear-gradient(120deg, #ffffff 35%, var(--azul-brillante));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -121,7 +121,7 @@
             color: #ffffff; 
             margin-bottom: 15px; 
         }
-        .titulo-seccion h2 span { color: var(--verde-premium); }
+        .titulo-seccion h2 span { color: var(--azul-premium); }
         .titulo-seccion p { color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 1rem; }
         
         /* Grid Industrial y Tarjetas */
@@ -143,7 +143,7 @@
             z-index: 3; pointer-events: none;
         }
         .tarjeta-tecnica:hover { 
-            border-color: var(--verde-premium); 
+            border-color: var(--azul-premium); 
             transform: translateY(-6px); 
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 153, 61, 0.15); 
         }
@@ -158,7 +158,7 @@
             color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; 
             display: flex; align-items: center; gap: 10px;
         }
-        .tarjeta-tecnica h3 i { color: var(--verde-premium); font-size: 1.1rem; }
+        .tarjeta-tecnica h3 i { color: var(--azul-premium); font-size: 1.1rem; }
         .tarjeta-tecnica p { color: #94a3b8; line-height: 1.6; font-size: 0.95rem; font-weight: 300; }
         
         /* Manifiesto Corporativo */
@@ -177,7 +177,7 @@
         
         /* Botones */
         .btn { 
-            background: var(--verde-industrial); 
+            background: var(--azul-industrial); 
             color: #ffffff; 
             padding: 14px 32px; 
             border-radius: 6px; 
@@ -193,7 +193,7 @@
             border: 1px solid rgba(255,255,255,0.05); 
             cursor: pointer; 
         }
-        .btn:hover { background: var(--verde-premium); box-shadow: 0 0 30px rgba(0,153,61,0.4); transform: translateY(-2px); }
+        .btn:hover { background: var(--azul-premium); box-shadow: 0 0 30px rgba(0,153,61,0.4); transform: translateY(-2px); }
         .btn-borde { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; }
         .btn-borde:hover { background: rgba(255,255,255,0.05); border-color: #ffffff; box-shadow: none; }
         .btn-wsp { background: #1ebe58; }
@@ -238,7 +238,7 @@
 
         .btn-flotante:hover, .btn-flotante.seccion-activa { 
             transform: translateY(-3px); 
-            border-color: var(--verde-brillante); 
+            border-color: var(--azul-brillante); 
             box-shadow: 0 6px 20px rgba(0, 230, 92, 0.5);
             background: #ffffff;
         }
@@ -247,9 +247,9 @@
         .ventana-qr { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,6,6,0.92); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; padding: 20px; }
         .contenido-qr { background: #0d0f0f; border: 1px solid var(--borde-acero); border-radius: 20px; padding: 40px 24px; max-width: 400px; width: 100%; text-align: center; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
         .cerrar-qr { position: absolute; top: 15px; right: 20px; color: #64748b; font-size: 26px; cursor: pointer; transition: color 0.2s; }
-        .cerrar-qr:hover { color: var(--verde-brillante); }
+        .cerrar-qr:hover { color: var(--azul-brillante); }
         #codigo-qr { margin: 25px auto; padding: 15px; background: #fff; border-radius: 12px; display: inline-block; }
-        .url-qr { color: var(--verde-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; }
+        .url-qr { color: var(--azul-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; }
 
         @media (max-width: 768px) {
             .btn-flotante span { display: none; }
@@ -398,7 +398,7 @@
         <div class="mapa-contenedor">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.4646738221143!2d-100.19010412371973!3d25.7882583078426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629555cbe83cb1%3A0x6bfe861d8717800c!2sCalle%205%20de%20Mayo%20510%2C%20Centro%2C%2066600%20Cd%20Apodaca%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1718567845342!5m2!1ses-419!2smx" allowfullscreen loading="lazy"></iframe>
         </div>
-        <p><i class="fa-solid fa-location-dot" style="color:var(--verde-premium);"></i> Calle 5 de Mayo N° 510, Colonia Centro, Apodaca, Nuevo León, C.P. 66600</p>
+        <p><i class="fa-solid fa-location-dot" style="color:var(--azul-premium);"></i> Calle 5 de Mayo N° 510, Colonia Centro, Apodaca, Nuevo León, C.P. 66600</p>
         <div style="margin-top: 30px;">
             <a href="https://wa.me/528116710029?text=Hola,%20solicito%20la%20apertura%20de%20una%20cotizacion%20formal%20de%20proyecto" target="_blank" class="btn btn-wsp"><i class="fa-solid fa-file-invoice-dollar"></i> CONVERSAR POR WHATSAPP</a>
             <a href="mailto:daniel.cazares@outlook.com" class="btn btn-mail"><i class="fa-solid fa-envelope"></i> ENVIAR CORREO</a>
