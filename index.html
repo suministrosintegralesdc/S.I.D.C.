@@ -576,5 +576,25 @@ function abrirQR() { document.getElementById('ventanaQR').style.display = 'flex'
 function cerrarQR() { document.getElementById('ventanaQR').style.display = 'none'; }
 document.getElementById('ventanaQR').addEventListener('click', e => { if(e.target.id === 'ventanaQR') cerrarQR(); });
 </script>
+<style>
+.llave-cayendo {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    width: 60px;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.35;
+    animation: caerLlave 6s ease-in cubic-bezier(0.5,0,1,0.5) infinite;
+}
+@keyframes caerLlave {
+    0% { top: -100px; opacity: 0.35; transform: rotate(0deg); }
+    70% { top: 100vh; opacity: 0.35; transform: rotate(180deg); }
+    71% { opacity: 0; }
+    100% { top: 100vh; opacity: 0; }
+}
+</style>
+<img src="llave.png" class="llave-cayendo" alt="">
 </body>
 </html>
