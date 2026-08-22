@@ -40,7 +40,7 @@
             background: rgba(9, 10, 10, 0.95); 
             backdrop-filter: blur(25px); 
             -webkit-backdrop-filter: blur(25px);
-            padding: 10px 20px; 
+            padding: 15px 20px; 
             border-bottom: 1px solid var(--borde-acero); 
             position: sticky; 
             top: 0; 
@@ -50,7 +50,8 @@
             align-items: center;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
-        .cabecera img { max-height: 65px; width: auto; object-fit: contain; }
+        .cabecera img { max-height: 120px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
+        .cabecera img:hover { transform: scale(1.05); }
         
         /* Portada con fondo personalizado */
         .portada { 
@@ -294,11 +295,33 @@
         #codigo-qr { margin: 25px auto; padding: 15px; background: #fff; border-radius: 12px; display: inline-block; }
         .url-qr { color: var(--azul-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; display: none; }
 
+        /* Llaves cayendo - MEJORADO */
+        .llave-cayendo {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            width: 80px;
+            height: auto;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: caerLlave 6s ease-in cubic-bezier(0.5,0,1,0.5) infinite;
+            filter: drop-shadow(0 0 10px rgba(79, 195, 247, 0.4));
+        }
+        @keyframes caerLlave {
+            0% { top: -100px; opacity: 0.7; transform: rotate(0deg); }
+            70% { top: 100vh; opacity: 0.7; transform: rotate(720deg); }
+            85% { opacity: 0.7; }
+            100% { top: 100vh; opacity: 0; transform: rotate(720deg); }
+        }
+
         @media (max-width: 768px) {
+            .cabecera img { max-height: 90px; }
             .btn-flotante span { display: none; }
             .btn-flotante { padding: 0 12px; width: 40px; border-radius: 8px; }
             .botones-flotantes { bottom: 15px; padding: 6px 10px; gap: 6px; }
             .qr-container img { max-width: 250px; }
+            .llave-cayendo { width: 60px; }
         }
     </style>
 </head>
@@ -307,7 +330,7 @@
 <canvas id="particulas"></canvas>
 
 <header class="cabecera">
-    <!-- Logotipo actualizado -->
+    <!-- Logotipo actualizado - MUCHO MAS GRANDE -->
     <img src="logo.png" alt="SIDC - Servicios Integrales Cázares">
 </header>
 
@@ -489,6 +512,9 @@
     </div>
 </div>
 
+<!-- LLAVES CAYENDO -->
+<img src="llaves.png" class="llave-cayendo" alt="Llaves animadas">
+
 <script>
 // 1. Iluminación Interactiva en Tarjetas
 document.querySelectorAll('.tarjeta-tecnica').forEach(tarjeta => {
@@ -611,25 +637,5 @@ function abrirQR() { document.getElementById('ventanaQR').style.display = 'flex'
 function cerrarQR() { document.getElementById('ventanaQR').style.display = 'none'; }
 document.getElementById('ventanaQR').addEventListener('click', e => { if(e.target.id === 'ventanaQR') cerrarQR(); });
 </script>
-<style>
-.llave-cayendo {
-    position: fixed;
-    top: -100px;
-    left: 50%;
-    width: 60px;
-    height: auto;
-    z-index: 5;
-    pointer-events: none;
-    opacity: 0.35;
-    animation: caerLlave 6s ease-in cubic-bezier(0.5,0,1,0.5) infinite;
-}
-@keyframes caerLlave {
-    0% { top: -100px; opacity: 0.35; transform: rotate(0deg); }
-    70% { top: 100vh; opacity: 0.35; transform: rotate(180deg); }
-    71% { opacity: 0; }
-    100% { top: 100vh; opacity: 0; }
-}
-</style>
-<img src="llave.png" class="llave-cayendo" alt="">
 </body>
 </html>
