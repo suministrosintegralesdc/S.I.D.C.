@@ -631,11 +631,22 @@ window.addEventListener('load', manejarScroll);
 // 4. Módulo Automático del Código QR
 const urlActual = window.location.href;
 document.getElementById('urlPagina').textContent = urlActual;
-QRCode.toCanvas(document.getElementById('codigo-qr'), urlActual, { width: 180, margin: 1, color: { dark: '#0047ab', light: '#ffffff' } });
+QRCode.toCanvas(document.getElementById('codigo-qr'), urlActual, { 
+    width: 180, 
+    margin: 1, 
+    color: { dark: '#0047ab', light: '#ffffff' } 
+});
 
-function abrirQR() { document.getElementById('ventanaQR').style.display = 'flex'; }
-function cerrarQR() { document.getElementById('ventanaQR').style.display = 'none'; }
-document.getElementById('ventanaQR').addEventListener('click', e => { if(e.target.id === 'ventanaQR') cerrarQR(); });
+function abrirQR() { 
+    document.getElementById('ventanaQR').style.display = 'flex'; 
+}
+function cerrarQR() { 
+    document.getElementById('ventanaQR').style.display = 'none'; 
+}
+document.getElementById('ventanaQR').addEventListener('click', e => { 
+    if(e.target.id === 'ventanaQR') cerrarQR(); 
+});
 </script>
 </body>
 </html>
+
