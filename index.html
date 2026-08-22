@@ -208,6 +208,49 @@
         .mapa-contenedor iframe { width: 100%; height: 400px; border: none; display: block; filter: grayscale(40%) invert(92%) hue-rotate(110deg) brightness(95%) contrast(90%); }
         .mapa-global p { color: #94a3b8; font-size: 1rem; margin-top: 15px; font-weight: 300; }
         
+        /* Sección QR Final */
+        .seccion-qr-final { 
+            text-align: center; 
+            margin-top: 80px; 
+            padding: 60px 24px; 
+            background: linear-gradient(135deg, rgba(0, 71, 171, 0.08) 0%, rgba(10, 11, 11, 0.6) 100%); 
+            border: 1px solid var(--borde-luz); 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        .seccion-qr-final h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            color: #fff; 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            margin-bottom: 15px; 
+        }
+        .seccion-qr-final p { 
+            color: #cbd5e1; 
+            font-size: 1.05rem; 
+            margin-bottom: 30px; 
+            font-weight: 300; 
+        }
+        .qr-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin: 40px 0; 
+        }
+        .qr-container img { 
+            max-width: 300px; 
+            width: 100%; 
+            height: auto; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0, 71, 171, 0.3); 
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .qr-container img:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.5);
+        }
+        
         /* Footer */
         .pie { background: #050606; border-top: 1px solid var(--borde-acero); padding: 50px 24px; text-align: center; position: relative; z-index: 1; }
         .pie p { color: #64748b; font-size: 0.85rem; margin-bottom: 6px; font-weight: 300; }
@@ -244,17 +287,18 @@
         }
         
         /* Modal QR */
-        .ventana-qr { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,6,6,0.92); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; padding: 20px; }
-        .contenido-qr { background: #0d0f0f; border: 1px solid var(--borde-acero); border-radius: 20px; padding: 40px 24px; max-width: 400px; width: 100%; text-align: center; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+        .ventana-qr { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,6,6,0.92); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; }
+        .contenido-qr { background: #0d0f0f; border: 1px solid var(--borde-acero); border-radius: 20px; padding: 40px 24px; max-width: 400px; width: 100%; text-align: center; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
         .cerrar-qr { position: absolute; top: 15px; right: 20px; color: #64748b; font-size: 26px; cursor: pointer; transition: color 0.2s; }
         .cerrar-qr:hover { color: var(--azul-brillante); }
         #codigo-qr { margin: 25px auto; padding: 15px; background: #fff; border-radius: 12px; display: inline-block; }
-        .url-qr { color: var(--azul-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; }
+        .url-qr { color: var(--azul-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; display: none; }
 
         @media (max-width: 768px) {
             .btn-flotante span { display: none; }
             .btn-flotante { padding: 0 12px; width: 40px; border-radius: 8px; }
             .botones-flotantes { bottom: 15px; padding: 6px 10px; gap: 6px; }
+            .qr-container img { max-width: 250px; }
         }
     </style>
 </head>
@@ -383,26 +427,39 @@
             </div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-bolt"></i> Tableros de Control Eléctrico</h3>
-                <p>Integración, cableado e ingeniería de consolas de automatización industrial, sistemas PLC placas de desarrollo esp arduino rapsberry pi entre otras y gabinetes de distribución eléctrica.</p>
+                <p>Integración, cableado e ingeniería de consolas de automatización industrial, sistemas PLC placas de desarrollo esp arduino rapsberry pi entre otras y gabinetes de distribución.</p>
             </div>
         </div>
     </div>
 
     <div class="manifiesto-ingenieria revelar">
         <h2>Ingeniería y Cumplimiento Normativo</h2>
-        <p>Garantizamos el éxito de cada intervención mediante personal capacitado, instrumental de precisión y apego riguroso a los estándares de seguridad industrial vigentes en Nuevo León y todo el mundo.</p>
+        <p>Garantizamos el éxito de cada intervención mediante personal capacitado, instrumental de precisión y apego riguroso a los estándares de seguridad industrial vigentes en Nuevo León y todo México.</p>
     </div>
 
     <div class="mapa-global revelar" id="contacto">
         <h2>Ubicación Operativa</h2>
         <div class="mapa-contenedor">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.4646738221143!2d-100.19010412371973!3d25.7882583078426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629555cbe83cb1%3A0x6bfe861d8717800c!2sCalle%205%20de%20Mayo%20510%2C%20Centro%2C%2066600%20Cd%20Apodaca%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1718567845342!5m2!1ses-419!2smx" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.4646738221143!2d-100.19010412371973!3d25.7882583078426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629555c0000001%3A0x1234567890abcdef!2sCalle%205%20de%20Mayo%20510%2C%20Apodaca%2C%20Nuevo%20Le%C3%B3n!5e0!3m2!1ses!2smx!4v1234567890"></iframe>
         </div>
         <p><i class="fa-solid fa-location-dot" style="color:var(--azul-premium);"></i> Calle 5 de Mayo N° 510, Colonia Centro, Apodaca, Nuevo León, C.P. 66600</p>
         <div style="margin-top: 30px;">
-            <a href="https://wa.me/528116710029?text=Hola,%20solicito%20la%20apertura%20de%20una%20cotizacion%20formal%20de%20proyecto" target="_blank" class="btn btn-wsp"><i class="fa-solid fa-file-invoice-dollar"></i> CONVERSAR POR WHATSAPP</a>
+            <a href="https://wa.me/528116710029?text=Hola,%20solicito%20la%20apertura%20de%20una%20cotizacion%20formal%20de%20proyecto" target="_blank" class="btn btn-wsp"><i class="fa-solid fa-file-invoice"></i> SOLICITAR COTIZACIÓN</a>
             <a href="mailto:daniel.cazares@outlook.com" class="btn btn-mail"><i class="fa-solid fa-envelope"></i> ENVIAR CORREO</a>
         </div>
+    </div>
+
+    <!-- NUEVA SECCIÓN: QR AZUL AL FINAL -->
+    <div class="seccion-qr-final revelar">
+        <h2>Escanea Nuestro Código QR <span style="color: var(--azul-premium);">Corporativo</span></h2>
+        <p>Accede a toda nuestra información, portafolio y datos de contacto de manera rápida y segura</p>
+        <div class="qr-container">
+            <img src="qr_fondo_negro.png" alt="Código QR Corporativo SIDC" title="Escanea para más información">
+        </div>
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 20px;">
+            <i class="fa-solid fa-mobile" style="color:var(--azul-premium); margin-right: 8px;"></i>
+            Escanea con tu dispositivo móvil para acceder a nuestras credenciales corporativas
+        </p>
     </div>
 </div>
 
@@ -414,34 +471,12 @@
 
 <!-- Panel Flotante de Enlaces -->
 <div class="botones-flotantes">
-    <!-- BOTÓN -->
-<button class="btn-flotante" onclick="abrirQR()" title="Compartir Credenciales"><i class="fa-solid fa-qrcode"></i><span>COMPARTIR QR</span></button>
-
-<!-- FUNCIÓN QUE ABRE TU QR -->
-<script>
-function abrirQR() {
-  window.open('plataforma_qr.png', '_blank', 'width=500,height=550,scrollbars=no,menubar=no,toolbar=no,top=100,left=100');
-}
-</script>
-
-    <button class="btn-flotante" onclick="abrirQR()" title="Compartir Credenciales"><i class="fa-solid fa-qrcode"></i><span>COMPARTIR QR</span></button>
-
-<script>
-function abrirQR() {
-  window.open('qr_fondo_negro.png', '_blank', 'width=520,height=560,scrollbars=no');
-}
-</script>
-    
     <a href="#servicios" id="lnk-servicios" class="btn-flotante" title="Ver Especialidades"><i class="fa-solid fa-gears"></i><span>SERVICIOS</span></a>
     <a href="#contacto" id="lnk-contacto" class="btn-flotante" title="Ubicación y Enlaces"><i class="fa-solid fa-location-dot"></i><span>CONTACTO</span></a>
     <a href="mailto:daniel.cazares.garza@outlook.com" class="btn-flotante" title="Enviar Correo"><i class="fa-solid fa-envelope"></i><span>E-MAIL</span></a>
     <a href="https://wa.me/528116710029?text=Hola,%20solicito%20atencion%20corporativa" target="_blank" class="btn-flotante" title="Canal Directo de WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP</span></a>
     <a href="https://www.facebook.com/share/1BdNBZeigh/" target="_blank" class="btn-flotante" title="Enlace Facebook"><i class="fa-brands fa-facebook-f"></i><span>FACEBOOK</span></a>
     <a href="https://www.instagram.com/emotion_systems?igsh=NzlxeXRzdXY5NTJp" target="_blank" class="btn-flotante" title="Portafolio Instagram"><i class="fa-brands fa-instagram"></i><span>INSTAGRAM</span></a>
-    <button class="btn-flotante" onclick="window.location.href='mailto:daniel.cazares.garza@outlook.com'" title="Enviar correo"><i class="fa-solid fa-envelope"></i><span>ENVIAR CORREO</span></button>
-    <button class="btn-flotante" onclick="abrirQR()" title="Compartir Credenciales"><i class="fa-solid fa-qrcode"></i><span>COMPARTIR QR</span></button>
-    <button class="btn-flotante" onclick="window.location.href='mailto:daniel.cazares.garza@outlook.com'" title="Enviar correo"><i class="fa-solid fa-envelope"></i><span>ENVIAR CORREO</span></button>
-    <button class="btn-flotante" onclick="window.open('https://www.facebook.com/share/1BdNBZeigh/', '_blank')" title="Ir a Subministros Integrales Cázares"><i class="fa-brands fa-facebook"></i><span>
 </div>
 
 <div class="ventana-qr" id="ventanaQR">
