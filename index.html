@@ -791,3 +791,102 @@ function calcularTiempo(){
         </div>
     </div>
 </div>
+// ⭐ COTIZADOR RÁPIDO
+let cotizacionGenerada = '';
+
+function calcularCotizacion() {
+    const largo = parseFloat(document.getElementById('cotLargo').value) || 0;
+    const ancho = parseFloat(document.getElementById('cotAncho').value) || 0;
+    const alto = parseFloat(document.getElementById('cotAlto').value) || 0;
+    const factor = parseFloat(document.getElementById('cotMaterial').value) || 1;
+    const costoMat = parseFloat(document.getElementById('cotMateriales').value) || 0;
+
+    const area = largo * ancho;
+    const volumen = largo * ancho * alto;
+    document.getElementById('areaCalculada').textContent = area.toFixed(2) + ' m²';
+    document.getElementById('volCalculado').textContent = volumen.toFixed(2) + ' m³';
+
+    // Cálculo automático si NO puso costo de materiales
+    let subtotal;
+    if (costoMat > 0) {
+        subtotal = costoMat * factor;
+    } else {
+        // Precio base por metro cuadrado ajustado por tipo de trabajo
+        const precioBaseM2 = 850; // Puedes cambiar este valor
+        subtotal = area * precioBaseM2 * factor;
+        if (subtotal < 500 && area === 0) subtotal = 0;
+    }
+
+    const iva = subtotal * 0.16;
+    const total = subtotal + iva;
+
+    document.getElementById('cotSubtotal').textContent = '$' + subtotal.toFixed(2);
+    document.getElementById('cotIVA').textContent = '$' + iva.toFixed(2);
+    document.getElementById('cotTotal').textContent = '$' + total.toFixed(2);
+}
+
+function generarCotizacion() {
+    const nombre = document.getElementById('cotNombre').value || 'Proyecto sin nombre';
+    const largo = document.getElementById('cotLargo').value || '0';
+    const ancho = document.getElementById('cotAncho').value || '0';
+    const alto = document.getElementById('cotAlto').value || '0';
+    const material = document.getElementById('cotMaterial').selectedOptions[0].textContent;
+    const notas = document.getElementById('cotNotas').value || 'Sin observaciones';
+    const archivo = document.getElementById('cotArchivo').value ? '✅ Adjunto recibido' : 'Sin archivos adjuntos';
+
+    const subt = document.getElementById('cotSubtotal').textContent;
+    const iva = document.getElementById('cotIVA').textContent;
+    const tot = document.getElementById('cotTotal').textContent;
+    const fecha = new Date().toLocaleDateString('es-MX', { dateStyle: 'full' });
+
+    cotizacionGenerada = `
+═══════════════════════════════════════════
+            C O T I Z A C I Ó N
+   Servicios Integrales Cázares - SIDC
+═══════════════════════════════════════════
+Fecha: ${fecha}
+
+📋 PROYECTO:
+${nombre}
+
+📏 MEDIDAS: ${largo}m × ${ancho}m × ${alto}m
+🔧 TRABAJO: ${material}
+📎 ARCHIVO: ${archivo}
+
+📌 OBSERVACIONES:
+${notas}
+
+═══════════════════════════════════════════
+Subtotal .......... ${subt}
+IVA 16% ........... ${iva}
+═══════════════════════════════════════════
+TOTAL .............. ${tot}
+═══════════════════════════════════════════
+⚠️ Cotización válida por 15 días.
+   Tiempos de entrega según disponibilidad.
+═══════════════════════════════════════════
+    `.trim();
+
+    const vista = document.getElementById('vistaCotizacion');
+    vista.style.display = 'block';
+    vista.textContent = cotizacionGenerada;
+}
+
+function copiarCotizacion() {
+    if (!cotizacionGenerada) { alert('Primer genera la cotización'); return; }
+    navigator.clipboard.writeText(cotizacionGenerada);
+    alert('✅ ¡Cotización copiada! Pégala en WhatsApp o correo');
+}
+
+function limpiarCotizacion() {
+    document.getElementById('cotNombre').value = '';
+    document.getElementById('cotLargo').value = '';
+    document.getElementById('cotAncho').value = '';
+    document.getElementById('cotAlto').value = '';
+    document.getElementById('cotMaterial').value = '1.0';
+    document.getElementById('cotMateriales').value = '';
+    document.getElementById('cotNotas').value = '';
+    document.getElementById('vistaCotizacion').style.display = 'none';
+    cotizacionGenerada = '';
+    calcularCotizacion();
+}
