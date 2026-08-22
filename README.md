@@ -7,11 +7,11 @@ Empresa líder en soluciones técnicas y de ingeniería de alta precisión
 
 
         📊 ESTADÍSTICAS
-Estadísticas Lenguajes Racha de actividad
+Estadísticas Lenguajes Racha de actividad  = canvas.https://suministrosintegralesdc.github.io/SIDC/
 
       🔗 PANEL DE ENLACES
 WhatsApp Grupo Oficial Soporte GitHub Repositorio Versión Estado Visitas
-## Código QR
+## Código QR nlaces -->
 
 <img src="qr_fondo_negro.png" width="300">
 
