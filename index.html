@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIDC - Soluciones Integrales Cázares</title>
-    <!-- Fuentes Corporativas de Alto Impacto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
@@ -15,16 +14,17 @@
             --azul-industrial: #0047ab; 
             --azul-premium: #1e88e5; 
             --azul-brillante: #4fc3f7;
+            --verde-accion: #00c853;
             --borde-acero: rgba(255, 255, 255, 0.07);
             --borde-luz: rgba(0, 153, 61, 0.25);
             --fondo-obscuro: #090a0a;
             --fondo-gradiente: radial-gradient(circle at 50% 20%, #121413 0%, #080909 100%);
-            --glass: rgba(20, 22, 22, 0.65);
+            --glass: rgba(20, 22, 22, 0.75);
             --cromo: linear-gradient(135deg, #e6e6e6 0%, #ffffff 30%, #b3b3b3 70%, #8c8c8c 100%);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; background-color: var(--fondo-obscuro); }
+        html { scroll-behavior: smooth; font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; background-color: var(--fondo-obscuro); }
         
         body { 
             background: var(--fondo-gradiente); 
@@ -33,7 +33,6 @@
             line-height: 1.6;
         }
         
-        /* Red de Ingeniería Dinámica */
         #particulas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.35; }
         
         .cabecera { 
@@ -53,7 +52,6 @@
         .cabecera img { max-height: 120px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
         .cabecera img:hover { transform: scale(1.05); }
         
-        /* Portada con fondo personalizado */
         .portada { 
             width: 100%; 
             min-height: 85vh; 
@@ -85,7 +83,7 @@
         }
 
         .portada h1 { 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif; 
             font-size: clamp(2.2rem, 6vw, 4.2rem); 
             color: #ffffff; 
             margin-bottom: 18px; 
@@ -116,7 +114,7 @@
 
         .titulo-seccion { text-align: center; margin-bottom: 60px; }
         .titulo-seccion h2 { 
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem); 
             font-weight: 700; 
             color: #ffffff; 
@@ -125,7 +123,6 @@
         .titulo-seccion h2 span { color: var(--azul-premium); }
         .titulo-seccion p { color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 1rem; }
         
-        /* Grid Industrial y Tarjetas */
         .grid-industrial { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .tarjeta-tecnica { 
@@ -155,14 +152,13 @@
         
         .tarjeta-cuerpo { padding: 30px; position: relative; z-index: 4; }
         .tarjeta-tecnica h3 { 
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
             color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; 
             display: flex; align-items: center; gap: 10px;
         }
         .tarjeta-tecnica h3 i { color: var(--azul-premium); font-size: 1.1rem; }
         .tarjeta-tecnica p { color: #94a3b8; line-height: 1.6; font-size: 0.95rem; font-weight: 300; }
         
-        /* Manifiesto Corporativo */
         .manifiesto-ingenieria { 
             background: linear-gradient(135deg, rgba(0, 102, 41, 0.12) 0%, rgba(10, 11, 11, 0.8) 100%); 
             border: 1px solid var(--borde-luz); 
@@ -173,10 +169,9 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
         }
-        .manifiesto-ingenieria h2 { font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
+        .manifiesto-ingenieria h2 { font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif; color: #fff; font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
         .manifiesto-ingenieria p { color: #cbd5e1; line-height: 1.8; max-width: 950px; margin: 0 auto; font-size: 1.05rem; font-weight: 300; }
         
-        /* Botones */
         .btn { 
             background: var(--azul-industrial); 
             color: #ffffff; 
@@ -199,17 +194,15 @@
         .btn-borde:hover { background: rgba(255,255,255,0.05); border-color: #ffffff; box-shadow: none; }
         .btn-wsp { background: #1ebe58; }
         .btn-wsp:hover { background: #17a64b; box-shadow: 0 0 30px rgba(30,190,88,0.4); }
-        .btn-mail { background: #24292e; border: 1px solid var(--borde-acero); }
-        .btn-mail:hover { background: #333a42; box-shadow: 0 0 25px rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
+        .btn-herramienta { background: linear-gradient(135deg, #6a11cb, #2575fc); font-size: 0.85rem; padding: 10px 18px; }
+        .btn-herramienta:hover { box-shadow: 0 0 20px rgba(106, 17, 203, 0.5); }
         
-        /* Ubicación */
         .mapa-global { margin-top: 60px; text-align: center; }
-        .mapa-global h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 30px; }
+        .mapa-global h2 { font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif; font-size: 1.8rem; margin-bottom: 30px; }
         .mapa-contenedor { border-radius: 16px; overflow: hidden; border: 1px solid var(--borde-acero); margin-bottom: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .mapa-contenedor iframe { width: 100%; height: 400px; border: none; display: block; filter: grayscale(40%) invert(92%) hue-rotate(110deg) brightness(95%) contrast(90%); }
         .mapa-global p { color: #94a3b8; font-size: 1rem; margin-top: 15px; font-weight: 300; }
         
-        /* Sección QR Final */
         .seccion-qr-final { 
             text-align: center; 
             margin-top: 80px; 
@@ -221,43 +214,19 @@
             backdrop-filter: blur(10px);
         }
         .seccion-qr-final h2 { 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif; 
             color: #fff; 
             font-size: 1.8rem; 
             font-weight: 700; 
             margin-bottom: 15px; 
         }
-        .seccion-qr-final p { 
-            color: #cbd5e1; 
-            font-size: 1.05rem; 
-            margin-bottom: 30px; 
-            font-weight: 300; 
-        }
-        .qr-container { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            margin: 40px 0; 
-        }
-        .qr-container img { 
-            max-width: 300px; 
-            width: 100%; 
-            height: auto; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0, 71, 171, 0.3); 
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .qr-container img:hover { 
-            transform: scale(1.05); 
-            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.5);
-        }
+        .qr-container { display: flex; justify-content: center; align-items: center; margin: 40px 0; }
+        #codigo-qr { padding: 15px; background: #fff; border-radius: 12px; }
         
-        /* Footer */
         .pie { background: #050606; border-top: 1px solid var(--borde-acero); padding: 50px 24px; text-align: center; position: relative; z-index: 1; }
         .pie p { color: #64748b; font-size: 0.85rem; margin-bottom: 6px; font-weight: 300; }
         .pie p.copyright { color: #475569; margin-top: 15px; font-size: 0.8rem; }
 
-        /* Panel Flotante */
         .botones-flotantes { 
             position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
             display: flex; flex-direction: row; align-items: center; gap: 10px; z-index: 9999; 
@@ -279,40 +248,55 @@
         }
         .btn-flotante i { font-size: 14px; }
         .btn-flotante span { display: inline; }
-
         .btn-flotante:hover, .btn-flotante.seccion-activa { 
-            transform: translateY(-3px); 
-            border-color: var(--azul-brillante); 
-            box-shadow: 0 6px 20px rgba(0, 230, 92, 0.5);
-            background: #ffffff;
+            transform: translateY(-3px); border-color: var(--azul-brillante); 
+            box-shadow: 0 6px 20px rgba(0, 230, 92, 0.5); background: #ffffff;
         }
         
-        /* Modal QR */
-        .ventana-qr { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,6,6,0.92); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; }
-        .contenido-qr { background: #0d0f0f; border: 1px solid var(--borde-acero); border-radius: 20px; padding: 40px 24px; max-width: 400px; width: 100%; text-align: center; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
-        .cerrar-qr { position: absolute; top: 15px; right: 20px; color: #64748b; font-size: 26px; cursor: pointer; transition: color 0.2s; }
-        .cerrar-qr:hover { color: var(--azul-brillante); }
-        #codigo-qr { margin: 25px auto; padding: 15px; background: #fff; border-radius: 12px; display: inline-block; }
-        .url-qr { color: var(--azul-premium); font-size: 0.85rem; word-break: break-all; font-weight: 400; display: none; }
+        .ventana-qr, .modal-herramientas { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(5,6,6,0.92); backdrop-filter: blur(10px); z-index: 10000; 
+            align-items: center; justify-content: center;
+        }
+        .contenido-modal { 
+            background: #0d0f0f; border: 1px solid var(--borde-acero); border-radius: 20px; 
+            padding: 30px 24px; max-width: 480px; width: 92%; max-height: 85vh; overflow-y: auto;
+            position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.8); 
+        }
+        .cerrar-modal { position: absolute; top: 12px; right: 18px; color: #64748b; font-size: 26px; cursor: pointer; transition: color 0.2s; }
+        .cerrar-modal:hover { color: var(--azul-brillante); }
+        .contenido-modal h3 { 
+            color:#fff; font-family:'Montserrat', sans-serif; text-align:center; 
+            margin-bottom:20px; font-size:1.2rem; border-bottom:1px solid var(--borde-acero); padding-bottom:10px;
+        }
+        .herramienta-grupo { margin-bottom:18px; }
+        .herramienta-grupo label { display:block; color:#cbd5e1; font-size:0.88rem; margin-bottom:6px; }
+        .herramienta-grupo input, .herramienta-grupo textarea { 
+            width:100%; padding:10px 12px; background:#151818; border:1px solid var(--borde-acero); 
+            border-radius:6px; color:#fff; font-size:0.95rem;
+        }
+        .herramienta-grupo textarea { min-height:80px; resize:vertical; }
+        .fila-botones { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+        .btn-mini { padding:7px 14px; font-size:0.8rem; border-radius:5px; border:none; cursor:pointer; font-weight:500; }
+        .btn-copiar { background:var(--azul-premium); color:#fff; }
+        .btn-limpiar { background:#374151; color:#fff; }
+        .btn-ejecutar { background:var(--verde-accion); color:#fff; }
+        .reloj-digital { 
+            font-family:'Courier New', monospace; font-size:2rem; text-align:center; 
+            color:var(--azul-brillante); letter-spacing:2px; margin:10px 0;
+        }
+        .resultado { margin-top:10px; padding:10px; background:rgba(0,71,171,0.1); border-radius:6px; color:#94a3b8; font-size:0.9rem; }
+        .exito { color:#4ade80; }
 
-        /* Llaves cayendo - MEJORADO */
         .llave-cayendo {
-            position: fixed;
-            top: -100px;
-            left: 50%;
-            width: 80px;
-            height: auto;
-            z-index: 10;
-            pointer-events: none;
-            opacity: 0.7;
+            position: fixed; top:-100px; left:50%; width:60px; height:auto; z-index:10; pointer-events:none; opacity:0.6;
             animation: caerLlave 6s ease-in cubic-bezier(0.5,0,1,0.5) infinite;
-            filter: drop-shadow(0 0 10px rgba(79, 195, 247, 0.4));
+            filter:drop-shadow(0 0 8px rgba(79,195,247,0.4));
         }
         @keyframes caerLlave {
-            0% { top: -100px; opacity: 0.7; transform: rotate(0deg); }
-            70% { top: 100vh; opacity: 0.7; transform: rotate(720deg); }
-            85% { opacity: 0.7; }
-            100% { top: 100vh; opacity: 0; transform: rotate(720deg); }
+            0%{top:-100px;opacity:0.6;transform:rotate(0deg);}
+            70%{top:100vh;opacity:0.6;transform:rotate(720deg);}
+            100%{top:100vh;opacity:0;transform:rotate(720deg);}
         }
 
         @media (max-width: 768px) {
@@ -320,8 +304,6 @@
             .btn-flotante span { display: none; }
             .btn-flotante { padding: 0 12px; width: 40px; border-radius: 8px; }
             .botones-flotantes { bottom: 15px; padding: 6px 10px; gap: 6px; }
-            .qr-container img { max-width: 250px; }
-            .llave-cayendo { width: 60px; }
         }
     </style>
 </head>
@@ -330,20 +312,19 @@
 <canvas id="particulas"></canvas>
 
 <header class="cabecera">
-    <!-- Logotipo actualizado - MUCHO MAS GRANDE -->
     <img src="logo.png" alt="SIDC - Servicios Integrales Cázares">
 </header>
 
 <section class="portada">
-    <!-- Fondo actualizado con la imagen de taller SIDC -->
     <img src="0010.jpg" alt="Cobertura e Infraestructura SIDC" class="portada-img">
     <div class="sombra"></div>
     <div class="portada-texto">
         <h1>Servicios Integrales <span>Cázares</span></h1>
-        <p>Soluciones técnicas y de ingeniería de alta precisión para el sector industrial, comercial y residencial corporativo. Infraestructura confiable con sede central en Apodaca, Nuevo León.</p>
+        <p>Soluciones técnicas y de ingeniería de alta precisión para el sector industrial, comercial y residencial corporativo.</p>
         <div style="margin-top: 15px;">
-            <a href="#servicios" class="btn">PORTAFOLIO DE SERVICIOS <i class="fa-solid fa-chevron-down"></i></a>
-            <a href="#contacto" class="btn btn-borde">SOLICITAR COTIZACIÓN</a>
+            <a href="#servicios" class="btn">PORTAFOLIO <i class="fa-solid fa-chevron-down"></i></a>
+            <a href="#contacto" class="btn btn-borde">CONTACTO</a>
+            <button onclick="abrirHerramientas()" class="btn btn-herramienta">🛠️ HERRAMIENTAS</button>
         </div>
     </div>
 </section>
@@ -351,106 +332,71 @@
 <div class="contenedor revelar" id="servicios">
     <div class="titulo-seccion">
         <h2>Catálogo de Especialidades <span>Industriales</span></h2>
-        <p>Despliegue operativo y técnico diseñado para cumplir las exigencias normativas y operativas de clientes de alta escala.</p>
+        <p>Despliegue operativo y técnico diseñado para cumplir exigencias normativas y operativas.</p>
     </div>
 
     <div class="grid-industrial">
-        <!-- Tarjeta 1: Rigging y Maniobras -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0001.jpg" alt="Rigging y Maniobras" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0001.jpg" alt="Rigging y Maniobras" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-weight-hanging"></i> Rigging y Maniobras</h3>
-                <p>Movimiento, elevación, nivelación y anclaje técnico de maquinaria pesada bajo estrictos estándares de seguridad estructural.</p>
+                <p>Movimiento, elevación, nivelación y anclaje técnico de maquinaria pesada bajo estrictos estándares de seguridad.</p>
             </div>
         </div>
-        
-        <!-- Tarjeta 2: Estructuras de Almacenamiento -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0003.jpg" alt="Estructuras de Almacenamiento" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0003.jpg" alt="Estructuras de Almacenamiento" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-cubes"></i> Estructuras de Almacenamiento</h3>
-                <p>Diseño, armado e instalación de racks técnicos mecánicos, estructuras metálicas pesadas y sistemas de logística interna.</p>
+                <p>Diseño, armado e instalación de racks técnicos mecánicos y estructuras metálicas pesadas.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 3: Sistemas de Izaje Fijos -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0004.jpg" alt="Sistemas de Izaje Fijos" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0004.jpg" alt="Sistemas de Izaje Fijos" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
-                <h3><i class="fa-solid fa-dolly"></i> Sistemas de Izaje Fijos</h3>
-                <p>Montaje, calibración e ingeniería de grúas pórtico, estructuras polipasto y brazos de carga para estaciones de ensamble continuo.</p>
+                <h3><i class="fa-solid fa-dolly"></i> Sistemas de Izaje</h3>
+                <p>Montaje, calibración e ingeniería de grúas pórtico, estructuras polipasto y brazos de carga.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 4: Mantenimiento Logístico -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0007.jpg" alt="Mantenimiento Logístico" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0007.jpg" alt="Mantenimiento Logístico" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-gears"></i> Mantenimiento Logístico</h3>
-                <p>Soporte preventivo y correctivo a líneas de rodillos transportadores, bandas automáticas y sistemas de distribución de flujo masivo.</p>
+                <p>Soporte preventivo y correctivo a líneas de rodillos transportadores y bandas automáticas.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 5: Soporte Aeroportuario -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0009.jpg" alt="Soporte Aeroportuario" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0009.jpg" alt="Soporte Industrial" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
-                <h3><i class="fa-solid fa-plane-up"></i> Soporte industrial</h3>
-                <p>Mantenimiento a infraestructura crítica senalaminetos estructuras carros tranportadores, pasillos de abordaje y soporte de activos en rampa logística.</p>
+                <h3><i class="fa-solid fa-plane-up"></i> Soporte Industrial</h3>
+                <p>Mantenimiento a infraestructura crítica, señalización, estructuras y soporte de activos en rampa logística.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 6: Pailería Especializada -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0006.jpg" alt="Pailería Especializada" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0006.jpg" alt="Pailería y Soldadura" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
-                <h3><i class="fa-solid fa-fire"></i> Pailería Especializada Soldadura</h3>
-                <p>Procesos metalmecánicos avanzados de corte Soldadura Y Acabados ,trazo y soldadura de alta resistencia para aleaciones estructurales todo tipo de materiales.</p>
+                <h3><i class="fa-solid fa-fire"></i> Pailería y Soldadura</h3>
+                <p>Procesos metalmecánicos avanzados de corte, trazo y soldadura de alta resistencia.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 7: Estaciones Ergonómicas -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0002.jpg" alt="Estaciones Ergonómicas" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0002.jpg" alt="Estaciones Ergonómicas" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-wrench"></i> Estaciones Ergonómicas</h3>
-                <p>Construcción a medida de bancos de trabajo modulares en perfilería de aluminio estructural con accesorios lógicos organizadores materiales varian segun sus requerimientos.</p>
+                <p>Construcción a medida de bancos de trabajo modulares en perfilería de aluminio estructural.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 8: Manufactura y Precisión -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0005.jpg" alt="Manufactura y Precisión" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0005.jpg" alt="Manufactura y Precisión" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
                 <h3><i class="fa-solid fa-screwdriver-wrench"></i> Manufactura y Precisión</h3>
-                <p>Fabricación y maquinado de piezas con tolerancias estrictas mediante operaciones especializadas en Tornos Fresadoras CNC torneado y rectificado.</p>
+                <p>Fabricación y maquinado de piezas con tolerancias estrictas en tornos y fresadoras CNC.</p>
             </div>
         </div>
-
-        <!-- Tarjeta 9: Tableros de Control Eléctrico -->
         <div class="tarjeta-tecnica">
-            <div class="tarjeta-img-wrap">
-                <img src="0008.jpg" alt="Tableros de Control Eléctrico" class="tarjeta-img">
-            </div>
+            <div class="tarjeta-img-wrap"><img src="0008.jpg" alt="Tableros de Control Eléctrico" class="tarjeta-img"></div>
             <div class="tarjeta-cuerpo">
-                <h3><i class="fa-solid fa-bolt"></i> Tableros de Control Eléctrico</h3>
-                <p>Integración, cableado e ingeniería de consolas de automatización industrial, sistemas PLC placas de desarrollo esp arduino rapsberry pi entre otras y gabinetes de distribución.</p>
+                <h3><i class="fa-solid fa-bolt"></i> Tableros de Control</h3>
+                <p>Integración, cableado e ingeniería de consolas de automatización industrial y sistemas PLC.</p>
             </div>
         </div>
     </div>
@@ -472,17 +418,10 @@
         </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: QR AZUL AL FINAL -->
     <div class="seccion-qr-final revelar">
         <h2>Escanea Nuestro Código QR <span style="color: var(--azul-premium);">Corporativo</span></h2>
         <p>Accede a toda nuestra información, portafolio y datos de contacto de manera rápida y segura</p>
-        <div class="qr-container">
-            <img src="qr_fondo_negro.png" alt="Código QR Corporativo SIDC" title="Escanea para más información">
-        </div>
-        <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 20px;">
-            <i class="fa-solid fa-mobile" style="color:var(--azul-premium); margin-right: 8px;"></i>
-            Escanea con tu dispositivo móvil para acceder a nuestras credenciales corporativas
-        </p>
+        <div class="qr-container"><div id="codigo-qr"></div></div>
     </div>
 </div>
 
@@ -492,161 +431,363 @@
     <p class="copyright">© 2026 Servicios Integrales Cázares. Todos los derechos reservados.</p>
 </footer>
 
-<!-- Panel Flotante de Enlaces -->
 <div class="botones-flotantes">
-    <a href="#servicios" id="lnk-servicios" class="btn-flotante" title="Ver Especialidades"><i class="fa-solid fa-gears"></i><span>SERVICIOS</span></a>
-    <a href="#contacto" id="lnk-contacto" class="btn-flotante" title="Ubicación y Enlaces"><i class="fa-solid fa-location-dot"></i><span>CONTACTO</span></a>
-    <a href="mailto:daniel.cazares.garza@outlook.com" class="btn-flotante" title="Enviar Correo"><i class="fa-solid fa-envelope"></i><span>E-MAIL</span></a>
-    <a href="https://wa.me/528116710029?text=Hola,%20solicito%20atencion%20corporativa" target="_blank" class="btn-flotante" title="Canal Directo de WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP</span></a>
-    <a href="https://www.facebook.com/share/1BdNBZeigh/" target="_blank" class="btn-flotante" title="Enlace Facebook"><i class="fa-brands fa-facebook-f"></i><span>FACEBOOK</span></a>
-    <a href="https://www.instagram.com/emotion_systems?igsh=NzlxeXRzdXY5NTJp" target="_blank" class="btn-flotante" title="Portafolio Instagram"><i class="fa-brands fa-instagram"></i><span>INSTAGRAM</span></a>
+    <a href="#servicios" id="lnk-servicios" class="btn-flotante"><i class="fa-solid fa-gears"></i><span>SERVICIOS</span></a>
+    <a href="#contacto" id="lnk-contacto" class="btn-flotante"><i class="fa-solid fa-location-dot"></i><span>CONTACTO</span></a>
+    <a href="mailto:daniel.cazares.garza@outlook.com" class="btn-flotante"><i class="fa-solid fa-envelope"></i><span>E-MAIL</span></a>
+    <a href="https://wa.me/528116710029" target="_blank" class="btn-flotante"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP</span></a>
+    <button onclick="abrirHerramientas()" class="btn-flotante" title="Caja de Herramientas"><i class="fa-solid fa-screwdriver-wrench"></i><span>HERRAMIENTAS</span></button>
 </div>
 
+<!-- VENTANA QR -->
 <div class="ventana-qr" id="ventanaQR">
-    <div class="contenido-qr">
-        <span class="cerrar-qr" onclick="cerrarQR()">×</span>
-        <h3 style="color:#fff; font-family:'Montserrat', sans-serif; text-transform:uppercase; margin-bottom:12px; font-size:1.1rem; letter-spacing:0.5px;">Enlace Corporativo</h3>
-        <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:15px; font-weight:300;">Escanee el código de transferencia para sincronizar la plataforma con dispositivos móviles.</p>
-        <div id="codigo-qr"></div>
-        <div class="url-qr" id="urlPagina"></div>
+    <div class="contenido-modal">
+        <span class="cerrar-modal" onclick="cerrarQR()">×</span>
+        <h3>Enlace Corporativo</h3>
+        <p style="color:#94a3b8; font-size:0.9rem;">Escanee el código para acceder al sitio web.</p>
+        <div id="codigo-qr-modal"></div>
     </div>
 </div>
 
-<!-- LLAVES CAYENDO -->
-<img src="llaves.png" class="llave-cayendo" alt="Llaves animadas">
+<!-- VENTANA HERRAMIENTAS -->
+<div class="modal-herramientas" id="ventanaHerramientas">
+    <div class="contenido-modal">
+        <span class="cerrar-modal" onclick="cerrarHerramientas()">×</span>
+        <h3>🛠️ CAJA DE HERRAMIENTAS SIDC</h3>
+
+        <!-- RELOJ -->
+        <div class="herramienta-grupo">
+            <label>🕐 Hora y Fecha Actual</label>
+            <div class="reloj-digital" id="reloj"></div>
+        </div>
+
+        <!-- CALCULADORA -->
+        <div class="herramienta-grupo">
+            <label>🧮 Calculadora (ej: 2500 * 1.16)</label>
+            <input type="text" id="calcEntrada" placeholder="Escribe la operación...">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="calcular()">CALCULAR</button>
+                <button class="btn-mini btn-limpiar" onclick="limpiarCalc()">LIMPIAR</button>
+            </div>
+            <div class="resultado" id="calcResultado"></div>
+        </div>
+
+        <!-- CONVERSOR DE UNIDADES -->
+        <div class="herramienta-grupo">
+            <label>📏 Conversor: Metros ↔ Pies / Kilos ↔ Lbs</label>
+            <input type="number" id="valorConvertir" placeholder="Escribe el valor...">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="convertirMetrosPies()">m → pies</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirPiesMetros()">pies → m</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirKgLbs()">kg → lbs</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirLbsKg()">lbs → kg</button>
+            </div>
+            <div class="resultado" id="convResultado"></div>
+        </div>
+
+        <!-- GENERADOR DE CONTRASEÑAS -->
+        <div class="herramienta-grupo">
+            <label>🔐 Generar Contraseña Segura</label>
+            <input type="number" id="lenPass" value="16" style="width:80px; display:inline;"> caracteres
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="generarPass()">GENERAR</button>
+                <button class="btn-mini btn-copiar" onclick="copiarPass()">COPIAR</button>
+            </div>
+            <div class="resultado exito" id="passResultado" style="font-weight:bold;"></div>
+        </div>
+
+        <!-- LIMPIADOR DE TEXTO -->
+        <div class="herramienta-grupo">
+            <label>🧹 Limpiador de Texto (quita espacios extra)</label>
+            <textarea id="textoSucio" placeholder="Pega tu texto aquí..."></textarea>
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="limpiarTexto()">LIMPIAR</button>
+                <button class="btn-mini btn-copiar" onclick="copiarTexto()">COPIAR</button>
+            </div>
+            <div class="resultado" id="textoLimpio"></div>
+        </div>
+
+        <!-- TIEMPO Y DISTANCIA -->
+        <div class="herramienta-grupo">
+            <label>🚚 Tiempo Estimado de Entrega</label>
+            <input type="number" id="distanciaKm" placeholder="Distancia en km">
+            <input type="number" id="velocidad" placeholder="Velocidad km/h" value="60" style="margin-top:6px;">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="calcularTiempo()">CALCULAR TIEMPO</button>
+            </div>
+            <div class="resultado" id="tiempoResultado"></div>
+        </div>
+    </div>
+</div>
+
+<img src="llaves.png" class="llave-cayendo" alt="Llaves cayendo" onerror="this.style.display='none'">
 
 <script>
-// 1. Iluminación Interactiva en Tarjetas
+// 1. Iluminación tarjetas
 document.querySelectorAll('.tarjeta-tecnica').forEach(tarjeta => {
     tarjeta.addEventListener('mousemove', e => {
         const rect = tarjeta.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        tarjeta.style.setProperty('--mouse-x', `${x}px`);
-        tarjeta.style.setProperty('--mouse-y', `${y}px`);
+        tarjeta.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        tarjeta.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
     });
 });
 
-// 2. Canvas de Nodos Dinámicos
+// 2. Partículas
 const canvas = document.getElementById('particulas');
 const ctx = canvas.getContext('2d');
-let nodos = [];
-let mouseX = 0, mouseY = 0;
-
-function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-window.addEventListener('resize', resize); 
-window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+let nodos = [], mouseX = 0, mouseY = 0;
+function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+window.addEventListener('resize',resize);
+window.addEventListener('mousemove',e=>{mouseX=e.clientX; mouseY=e.clientY;});
 resize();
 
-class Nodo {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.35;
-        this.vy = (Math.random() - 0.5) * 0.35;
-        this.radio = Math.random() * 1.5 + 1;
+class Nodo{
+    constructor(){ this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height; this.vx=(Math.random()-0.5)*0.35; this.vy=(Math.random()-0.5)*0.35; this.r=Math.random()*1.5+1; }
+    update(){
+        this.x+=this.vx; this.y+=this.vy;
+        let dx=mouseX-this.x, dy=mouseY-this.y, d=Math.hypot(dx,dy);
+        if(d<120){ this.x-=dx*0.02; this.y-=dy*0.02; }
+        if(this.x<0||this.x>canvas.width)this.vx*=-1;
+        if(this.y<0||this.y>canvas.height)this.vy*=-1;
     }
-    update() {
-        this.x += this.vx; this.y += this.vy;
-        let dx = mouseX - this.x;
-        let dy = mouseY - this.y;
-        let distMouse = Math.sqrt(dx * dx + dy * dy);
-        if (distMouse < 120) {
-            this.x -= dx * 0.02;
-            this.y -= dy * 0.02;
-        }
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-    }
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 230, 92, 0.5)';
-        ctx.fill();
-    }
+    draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fillStyle='rgba(0,230,92,0.5)'; ctx.fill(); }
 }
-
-for(let i = 0; i < 45; i++) nodos.push(new Nodo());
-
-function animar() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for(let i = 0; i < nodos.length; i++) {
-        nodos[i].update();
-        nodos[i].draw();
-        for(let j = i + 1; j < nodos.length; j++) {
-            const dx = nodos[i].x - nodos[j].x;
-            const dy = nodos[i].y - nodos[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if(dist < 110) {
-                ctx.beginPath();
-                ctx.moveTo(nodos[i].x, nodos[i].y);
-                ctx.lineTo(nodos[j].x, nodos[j].y);
-                ctx.strokeStyle = `rgba(0, 153, 61, ${0.12 * (1 - dist/110)})`;
-                ctx.lineWidth = 0.6;
-                ctx.stroke();
-            }
+for(let i=0;i<45;i++) nodos.push(new Nodo());
+function animar(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<nodos.length;i++){
+        nodos[i].update(); nodos[i].draw();
+        for(let j=i+1;j<nodos.length;j++){
+            let d=Math.hypot(nodos[i].x-nodos[j].x, nodos[i].y-nodos[j].y);
+            if(d<110){ ctx.beginPath(); ctx.moveTo(nodos[i].x,nodos[i].y); ctx.lineTo(nodos[j].x,nodos[j].y); ctx.strokeStyle=`rgba(0,153,61,${0.12*(1-d/110)})`; ctx.lineWidth=0.6; ctx.stroke(); }
         }
     }
     requestAnimationFrame(animar);
 }
 animar();
 
-// 3. Scroll Reveal y Tracking de Menú Activo
-const elementosARevelar = document.querySelectorAll('.revelar');
-const btnServicios = document.getElementById('lnk-servicios');
-const btnContacto = document.getElementById('lnk-contacto');
-const secServicios = document.getElementById('servicios');
-const secContacto = document.getElementById('contacto');
-
-function manejarScroll() {
-    const scrollTop = window.scrollY;
-    const alturaVentana = window.innerHeight;
-
-    elementosARevelar.forEach(el => {
-        const topElemento = el.getBoundingClientRect().top + scrollTop;
-        if (scrollTop + (alturaVentana * 0.85) > topElemento) {
-            el.classList.add('activo');
-        }
+// 3. Scroll reveal
+const elementosARevelar=document.querySelectorAll('.revelar');
+const btnServ=document.getElementById('lnk-servicios'), btnCont=document.getElementById('lnk-contacto');
+const secServ=document.getElementById('servicios'), secCont=document.getElementById('contacto');
+function manejarScroll(){
+    let st=window.scrollY, vh=window.innerHeight;
+    elementosARevelar.forEach(el=>{
+        let top=el.getBoundingClientRect().top+st;
+        if(st+vh*0.85>top) el.classList.add('activo');
     });
-
-    if (secContacto && secServicios) {
-        const topContacto = secContacto.getBoundingClientRect().top + scrollTop - 200;
-        const topServicios = secServicios.getBoundingClientRect().top + scrollTop - 200;
-
-        if (scrollTop >= topContacto) {
-            btnContacto.classList.add('seccion-activa');
-            btnServicios.classList.remove('seccion-activa');
-        } else if (scrollTop >= topServicios) {
-            btnServicios.classList.add('seccion-activa');
-            btnContacto.classList.remove('seccion-activa');
-        } else {
-            btnServicios.classList.remove('seccion-activa');
-            btnContacto.classList.remove('seccion-activa');
-        }
+    if(secCont&&secServ){
+        let topC=secCont.getBoundingClientRect().top+st-200;
+        let topS=secServ.getBoundingClientRect().top+st-200;
+        if(st>=topC){ btnCont.classList.add('seccion-activa'); btnServ.classList.remove('seccion-activa'); }
+        else if(st>=topS){ btnServ.classList.add('seccion-activa'); btnCont.classList.remove('seccion-activa'); }
+        else{ btnServ.classList.remove('seccion-activa'); btnCont.classList.remove('seccion-activa'); }
     }
 }
-window.addEventListener('scroll', manejarScroll);
-window.addEventListener('load', manejarScroll);
+window.addEventListener('scroll',manejarScroll);
+window.addEventListener('load',manejarScroll);
 
-// 4. Módulo Automático del Código QR
-const urlActual = window.location.href;
-document.getElementById('urlPagina').textContent = urlActual;
-QRCode.toCanvas(document.getElementById('codigo-qr'), urlActual, { 
-    width: 180, 
-    margin: 1, 
-    color: { dark: '#0047ab', light: '#ffffff' } 
-});
-
-function abrirQR() { 
-    document.getElementById('ventanaQR').style.display = 'flex'; 
+// 4. QR
+const urlActual=window.location.href;
+function generarQR(){
+    if(typeof QRCode!=='undefined'){
+        QRCode.toCanvas(document.getElementById('codigo-qr'),urlActual,{width:180,margin:2,color:{dark:'#0047ab',light:'#fff'}});
+    }
 }
-function cerrarQR() { 
-    document.getElementById('ventanaQR').style.display = 'none'; 
-}
-document.getElementById('ventanaQR').addEventListener('click', e => { 
-    if(e.target.id === 'ventanaQR') cerrarQR(); 
-});
-</script>
-</body>
-</html>
+window.addEventListener('load',generarQR);
 
+// 5. VENTANAS
+function abrirQR(){ document.getElementById('ventanaQR').style.display='flex'; }
+function cerrarQR(){ document.getElementById('ventanaQR').style.display='none'; }
+function abrirHerramientas(){ document.getElementById('ventanaHerramientas').style.display='flex'; actualizarReloj(); }
+function cerrarHerramientas(){ document.getElementById('ventanaHerramientas').style.display='none'; }
+
+// 6. HERRAMIENTAS
+function actualizarReloj(){
+    const d=new Date();
+    const h=d.toLocaleTimeString('es-MX',{hour12:false});
+    const f=d.toLocaleDateString('es-MX',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+    document.getElementById('reloj').innerHTML=`<div>${h}</div><div style="font-size:0.85rem; color:#94a3b8; margin-top:4px;">${f}</div>`;
+}
+setInterval(actualizarReloj,1000);
+
+function calcular(){
+    try{
+        let res=eval(document.getElementById('calcEntrada').value.replace(/[^0-9+\-*/().%]/g,''));
+        document.getElementById('calcResultado').innerHTML=`✅ = <strong>${res}</strong>`;
+    }catch{ document.getElementById('calcResultado').innerHTML='❌ Error en la operación'; }
+}
+function limpiarCalc(){ document.getElementById('calcEntrada').value=''; document.getElementById('calcResultado').innerHTML=''; }
+
+function convertirMetrosPies(){ let v=parseFloat(document.getElementById('valorConvertir').value); document.getElementById('convResultado').innerHTML=`${v} m = ${(v*3.28084).toFixed(2)} pies`; }
+function convertirPiesMetros(){ let v=parseFloat(document.getElementById('valorConvertir').value); document.getElementById('convResultado').innerHTML=`${v} pies = ${(v*0.3048).toFixed(2)} m`; }
+function convertirKgLbs(){ let v=parseFloat(document.getElementById('valorConvertir').value); document.getElementById('convResultado').innerHTML=`${v} kg = ${(v*2.20462).toFixed(2)} lbs`; }
+function convertirLbsKg(){ let v=parseFloat(document.getElementById('valorConvertir').value); document.getElementById('convResultado').innerHTML=`${v} lbs = ${(v*0.453592).toFixed(3)} kg`; }
+
+let claveGenerada='';
+function generarPass(){
+    const len=parseInt(document.getElementById('lenPass').value)||12;
+    const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_-+=';
+    claveGenerada=Array.from({length:len},()=>chars.charAt(Math.floor(Math.random()*chars.length))).join('');
+    document.getElementById('passResultado').textContent=claveGenerada;
+}
+function copiarPass(){ if(claveGenerada) navigator.clipboard.writeText(claveGenerada); }
+
+function limpiarTexto(){
+    let t=document.getElementById('textoSucio').value;
+    t=t.replace(/\s+/g,' ').trim();
+    document.getElementById('textoLimpio').textContent=t;
+}
+function copiarTexto(){ const t=document.getElementById('textoLimpio').textContent; if(t) navigator.clipboard.writeText(t); }
+
+function calcularTiempo(){
+    let km=parseFloat(document.getElementById('distanciaKm').value);
+    let vel=parseFloat(document.getElementById('velocidad').value)||60;
+    let horas=km/vel;
+    let h=Math.floor(horas);
+    let m=Math.round((horas-h)*60);
+    document.getElementById('tiempoResultado').innerHTML=`⏱️ Tiempo aprox: <strong>${h}h ${m}m</strong> a ${vel} km/h`;
+}
+
+<!-- VENTANA HERRAMIENTAS ACTUALIZADA -->
+<div class="modal-herramientas" id="ventanaHerramientas">
+    <div class="contenido-modal" style="max-width:560px;">
+        <span class="cerrar-modal" onclick="cerrarHerramientas()">×</span>
+        <h3>🛠️ CAJA DE HERRAMIENTAS SIDC</h3>
+
+        <!-- RELOJ -->
+        <div class="herramienta-grupo">
+            <label>🕐 Hora y Fecha Actual</label>
+            <div class="reloj-digital" id="reloj"></div>
+        </div>
+
+        <!-- GENERADOR DE COTIZACIONES RÁPIDAS ⭐ NUEVO -->
+        <div style="border-top:1px solid var(--borde-acero); margin:18px 0; padding-top:18px;"></div>
+        <h4 style="color:var(--azul-brillante); margin-bottom:12px;">📋 COTIZADOR RÁPIDO</h4>
+
+        <div class="herramienta-grupo">
+            <label>📝 Nombre / Descripción del proyecto</label>
+            <input type="text" id="cotNombre" placeholder="Ej: Estructura de soporte, Rampa, Estante...">
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>📏 Medidas — Largo × Ancho × Alto (metros)</label>
+            <div style="display:flex; gap:6px;">
+                <input type="number" id="cotLargo" placeholder="Largo" step="0.01" oninput="calcularCotizacion()">
+                <input type="number" id="cotAncho" placeholder="Ancho" step="0.01" oninput="calcularCotizacion()">
+                <input type="number" id="cotAlto" placeholder="Alto" step="0.01" oninput="calcularCotizacion()">
+            </div>
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>📐 Área estimada: <span id="areaCalculada" style="color:var(--verde-accion);">0 m²</span> · Volumen: <span id="volCalculado" style="color:var(--azul-brillante);">0 m³</span></label>
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>🔧 Tipo de trabajo / Material principal</label>
+            <select id="cotMaterial" onchange="calcularCotizacion()" style="width:100%; padding:10px; background:#151818; color:#fff; border:1px solid var(--borde-acero); border-radius:6px;">
+                <option value="1.0">Selecciona una opción</option>
+                <option value="1.2">Estructura metálica / Perfiles</option>
+                <option value="1.0">Lámina / Pailería</option>
+                <option value="0.9">Soldadura y montaje</option>
+                <option value="1.5">Acero inoxidable / Especial</option>
+                <option value="1.3">Aluminio</option>
+                <option value="0.8">Mantenimiento / Reparación</option>
+                <option value="1.1">Instalación eléctrica / Tableros</option>
+                <option value="1.4">Diseño y fabricación especial</option>
+            </select>
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>💲 Costo de materiales estimado (opcional)</label>
+            <input type="number" id="cotMateriales" placeholder="Escribe si ya sabes el costo..." oninput="calcularCotizacion()">
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>📎 Subir imagen o plano de referencia (opcional)</label>
+            <input type="file" id="cotArchivo" accept="image/*,.pdf,.jpg,.png" style="color:#cbd5e1; font-size:0.88rem;">
+        </div>
+
+        <div class="herramienta-grupo">
+            <label>📌 Observaciones adicionales del cliente</label>
+            <textarea id="cotNotas" placeholder="Pega aquí requisitos especiales, plazos, normativas..."></textarea>
+        </div>
+
+        <!-- PRECIOS CALCULADOS -->
+        <div class="resultado" style="background:rgba(0,71,171,0.15); border:1px solid var(--azul-premium); margin-top:10px;">
+            <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+                <span>Subtotal estimado:</span>
+                <span id="cotSubtotal" style="font-weight:bold;">$0.00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+                <span>IVA (16%):</span>
+                <span id="cotIVA" style="font-weight:bold;">$0.00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; font-size:1.1rem;">
+                <span style="color:#fff; font-weight:bold;">TOTAL:</span>
+                <span id="cotTotal" style="font-weight:bold; color:var(--verde-accion); font-size:1.2rem;">$0.00</span>
+            </div>
+        </div>
+
+        <div class="fila-botones" style="margin-top:12px;">
+            <button class="btn-mini btn-ejecutar" onclick="generarCotizacion()">📄 GENERAR COTIZACIÓN</button>
+            <button class="btn-mini btn-copiar" onclick="copiarCotizacion()">📋 COPIAR</button>
+            <button class="btn-mini btn-limpiar" onclick="limpiarCotizacion()">🗑️ NUEVA</button>
+        </div>
+
+        <!-- PREVISUALIZACIÓN DEL DOCUMENTO GENERADO -->
+        <div id="vistaCotizacion" style="margin-top:15px; display:none; background:#fff; color:#111; padding:15px; border-radius:8px; font-size:0.85rem; white-space:pre-wrap;"></div>
+
+        <!-- SEPARADOR -->
+        <div style="border-top:1px solid var(--borde-acero); margin:18px 0;"></div>
+
+        <!-- === RESTO DE HERRAMIENTAS === -->
+        <h4 style="color:var(--azul-brillante); margin-bottom:12px;">🔧 OTRAS HERRAMIENTAS</h4>
+
+        <!-- CALCULADORA -->
+        <div class="herramienta-grupo">
+            <label>🧮 Calculadora</label>
+            <input type="text" id="calcEntrada" placeholder="Ej: 2500 * 1.16">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="calcular()">CALCULAR</button>
+                <button class="btn-mini btn-limpiar" onclick="limpiarCalc()">LIMPIAR</button>
+            </div>
+            <div class="resultado" id="calcResultado"></div>
+        </div>
+
+        <!-- CONVERSOR -->
+        <div class="herramienta-grupo">
+            <label>📏 Conversor de Unidades</label>
+            <input type="number" id="valorConvertir" placeholder="Valor">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="convertirMetrosPies()">m→pies</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirPiesMetros()">pies→m</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirKgLbs()">kg→lbs</button>
+                <button class="btn-mini btn-ejecutar" onclick="convertirLbsKg()">lbs→kg</button>
+            </div>
+            <div class="resultado" id="convResultado"></div>
+        </div>
+
+        <!-- CONTRASEÑAS -->
+        <div class="herramienta-grupo">
+            <label>🔐 Contraseña Segura</label>
+            <input type="number" id="lenPass" value="16" style="width:60px;"> caracteres
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="generarPass()">GENERAR</button>
+                <button class="btn-mini btn-copiar" onclick="copiarPass()">COPIAR</button>
+            </div>
+            <div class="resultado exito" id="passResultado"></div>
+        </div>
+
+        <!-- TIEMPO DE ENTREGA -->
+        <div class="herramienta-grupo">
+            <label>🚚 Tiempo Estimado de Entrega</label>
+            <input type="number" id="distanciaKm" placeholder="Distancia km">
+            <input type="number" id="velocidad" placeholder="km/h" value="60" style="margin-top:4px;">
+            <div class="fila-botones">
+                <button class="btn-mini btn-ejecutar" onclick="calcularTiempo()">CALCULAR</button>
+            </div>
+            <div class="resultado" id="tiempoResultado"></div>
+        </div>
+    </div>
+</div>
