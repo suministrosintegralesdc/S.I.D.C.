@@ -890,3 +890,171 @@ function limpiarCotizacion() {
     cotizacionGenerada = '';
     calcularCotizacion();
 }
+<!-- ============================================================ -->
+<!-- 📱 QR + BOTÓN COTIZADOR — AL FINAL DE LA PÁGINA -->
+<!-- ============================================================ -->
+
+<div style="margin-top: 60px; padding: 30px 20px; text-align: center; border-top: 1px solid rgba(79,195,247,0.2);">
+
+    <!-- TU QR GRANDE AZUL ARRIBA -->
+    <div style="padding: 20px; background: linear-gradient(135deg, rgba(0,71,171,0.15), rgba(0,120,200,0.05)); border-radius: 20px; border: 2px solid rgba(79,195,247,0.35); display: inline-block; margin-bottom: 20px;">
+        <img src="TU_IMAGEN_QR.png" alt="QR SIDC" style="width: 200px; height: auto; border-radius: 12px;">
+        <p style="color: #94a3b8; margin-top: 10px; font-size: 0.9rem;">📱 Escanea para ver nuestros proyectos</p>
+    </div>
+
+    <!-- BOTÓN DEBAJO DEL QR -->
+    <br>
+    <button class="btn" onclick="abrirCotizador()" style="font-size: 1.1rem; padding: 14px 32px; margin-top: 10px;">
+        📋 ABRIR COTIZADOR
+    </button>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- 🪟 VENTANA DEL COTIZADOR (se abre al dar clic) -->
+<!-- ============================================================ -->
+<div class="modal-herramientas" id="ventanaCotizador" style="display:none;">
+  <div class="contenido-modal" style="max-width:580px; max-height:90vh; overflow-y:auto;">
+    <span class="cerrar-modal" onclick="cerrarCotizador()">×</span>
+    <h3 style="text-align:center; color:var(--azul-brillante);">📋 COTIZADOR RÁPIDO SIDC</h3>
+
+    <div class="herramienta-grupo">
+      <label>📋 Nombre / Descripción del proyecto</label>
+      <input type="text" id="cotNombre" placeholder="Ej: Estructura, Rampa, Estante...">
+    </div>
+
+    <div class="herramienta-grupo">
+      <label>📏 Medidas — Largo × Ancho × Alto (metros)</label>
+      <div style="display:flex; gap:6px;">
+        <input type="number" id="cotLargo" placeholder="Largo" step="0.01" oninput="calcularCotizacion()">
+        <input type="number" id="cotAncho" placeholder="Ancho" step="0.01" oninput="calcularCotizacion()">
+        <input type="number" id="cotAlto" placeholder="Alto" step="0.01" oninput="calcularCotizacion()">
+      </div>
+    </div>
+
+    <div class="herramienta-grupo">
+      <label>📐 Área: <span id="areaCalculada" style="color:var(--verde-accion);">0 m²</span> · Volumen: <span id="volCalculado" style="color:var(--azul-brillante);">0 m³</span></label>
+    </div>
+
+    <div class="herramienta-grupo">
+      <label>🔧 Tipo de trabajo / Material</label>
+      <select id="cotMaterial" onchange="calcularCotizacion()" style="width:100%; padding:10px; background:#151818; color:#fff; border:1px solid var(--borde-acero); border-radius:6px;">
+        <option value="1.0">Selecciona una opción</option>
+        <option value="1.2">Estructura metálica / Perfiles</option>
+        <option value="1.0">Lámina / Pailería</option>
+        <option value="0.9">Soldadura y montaje</option>
+        <option value="1.5">Acero inoxidable / Especial</option>
+        <option value="1.3">Aluminio</option>
+        <option value="0.8">Mantenimiento / Reparación</option>
+        <option value="1.1">Instalación eléctrica / Tableros</option>
+        <option value="1.4">Diseño y fabricación especial</option>
+      </select>
+    </div>
+
+    <div class="herramienta-grupo">
+      <label>💲 Costo de materiales (opcional)</label>
+      <input type="number" id="cotMateriales" placeholder="Si lo sabes, escríbelo..." oninput="calcularCotizacion()">
+    </div>
+
+    <div class="herramienta-grupo">
+      <label>📌 Observaciones del cliente</label>
+      <textarea id="cotNotas" placeholder="Requisitos, tiempos, detalles..."></textarea>
+    </div>
+
+    <div class="resultado" style="background:rgba(0,71,171,0.15); border:1px solid var(--azul-premium); margin-top:10px;">
+      <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <span>Subtotal estimado:</span>
+        <span id="cotSubtotal" style="font-weight:bold;">$0.00</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <span>IVA (16%):</span>
+        <span id="cotIVA" style="font-weight:bold;">$0.00</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:6px 0; font-size:1.1rem;">
+        <span style="color:#fff; font-weight:bold;">TOTAL:</span>
+        <span id="cotTotal" style="font-weight:bold; color:var(--verde-accion); font-size:1.2rem;">$0.00</span>
+      </div>
+    </div>
+
+    <div class="fila-botones" style="margin-top:15px;">
+      <button class="btn-mini btn-ejecutar" onclick="generarCotizacion()">📄 GENERAR</button>
+      <button class="btn-mini btn-copiar" onclick="copiarCotizacion()">📋 COPIAR</button>
+      <button class="btn-mini btn-limpiar" onclick="limpiarCotizacion()">🗑️ NUEVA</button>
+    </div>
+
+    <div id="vistaCotizacion" style="margin-top:15px; display:none; background:#fff; color:#111; padding:15px; border-radius:8px; font-size:0.85rem; white-space:pre-wrap;"></div>
+  </div>
+</div>
+
+<script>
+// ABRIR Y CERRAR
+function abrirCotizador(){ document.getElementById('ventanaCotizador').style.display='flex'; }
+function cerrarCotizador(){ document.getElementById('ventanaCotizador').style.display='none'; }
+
+// CÁLCULOS
+let cotizacionGenerada='';
+function calcularCotizacion(){
+  const largo=parseFloat(document.getElementById('cotLargo').value)||0;
+  const ancho=parseFloat(document.getElementById('cotAncho').value)||0;
+  const alto=parseFloat(document.getElementById('cotAlto').value)||0;
+  const factor=parseFloat(document.getElementById('cotMaterial').value)||1;
+  const costoMat=parseFloat(document.getElementById('cotMateriales').value)||0;
+  const area=largo*ancho;
+  const volumen=largo*ancho*alto;
+  document.getElementById('areaCalculada').textContent=area.toFixed(2)+' m²';
+  document.getElementById('volCalculado').textContent=volumen.toFixed(2)+' m³';
+  let subtotal = costoMat>0 ? costoMat*factor : area*850*factor;
+  if(subtotal<500 && area===0) subtotal=0;
+  const iva=subtotal*0.16; const total=subtotal+iva;
+  document.getElementById('cotSubtotal').textContent='$'+subtotal.toFixed(2);
+  document.getElementById('cotIVA').textContent='$'+iva.toFixed(2);
+  document.getElementById('cotTotal').textContent='$'+total.toFixed(2);
+}
+
+function generarCotizacion(){
+  const n=document.getElementById('cotNombre').value||'Proyecto sin nombre';
+  const l=document.getElementById('cotLargo').value||'0';
+  const a=document.getElementById('cotAncho').value||'0';
+  const al=document.getElementById('cotAlto').value||'0';
+  const mat=document.getElementById('cotMaterial').selectedOptions[0].textContent;
+  const obs=document.getElementById('cotNotas').value||'Sin observaciones';
+  const subt=document.getElementById('cotSubtotal').textContent;
+  const iva=document.getElementById('cotIVA').textContent;
+  const tot=document.getElementById('cotTotal').textContent;
+  const fecha=new Date().toLocaleDateString('es-MX',{dateStyle:'full'});
+  cotizacionGenerada=`
+═══════════════════════════════════════════
+            C O T I Z A C I Ó N
+   Servicios Integrales Cázares - SIDC
+═══════════════════════════════════════════
+Fecha: ${fecha}
+
+📋 PROYECTO:
+${n}
+
+📏 MEDIDAS: ${l}m × ${a}m × ${al}m
+🔧 TRABAJO: ${mat}
+
+📌 OBSERVACIONES:
+${obs}
+
+═══════════════════════════════════════════
+Subtotal .......... ${subt}
+IVA 16% ........... ${iva}
+═══════════════════════════════════════════
+TOTAL .............. ${tot}
+═══════════════════════════════════════════
+⚠️ Válida por 15 días. Entrega según disponibilidad.
+═══════════════════════════════════════════`.trim();
+  const vista=document.getElementById('vistaCotizacion'); vista.style.display='block'; vista.textContent=cotizacionGenerada;
+}
+
+function copiarCotizacion(){ if(!cotizacionGenerada){alert('Primero genera la cotización');return;} navigator.clipboard.writeText(cotizacionGenerada); alert('✅ ¡Cotización copiada!'); }
+function limpiarCotizacion(){
+  document.getElementById('cotNombre').value=''; document.getElementById('cotLargo').value='';
+  document.getElementById('cotAncho').value=''; document.getElementById('cotAlto').value='';
+  document.getElementById('cotMaterial').value='1.0'; document.getElementById('cotMateriales').value='';
+  document.getElementById('cotNotas').value=''; document.getElementById('vistaCotizacion').style.display='none';
+  cotizacionGenerada=''; calcularCotizacion();
+}
+</script>
